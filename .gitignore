@@ -1,0 +1,6 @@
+.vscode/*
+bin/*
+obj/*
+Termo.cbp
+Termo.depend
+Termo.layout
