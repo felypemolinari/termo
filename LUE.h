@@ -30,7 +30,7 @@ bool lerArquivoParaLista(LUE &lista, string nomeArquivo);
 // Selecionar uma palavra aleatória
 string selecionarPalavraAleatoria(LUE &lista);
 
-// Salvar a lista em um arquivo
+// Salvar a lista em um arquivo na hora de incluir
 void salvarListaEmArquivo(LUE &lista, string nomeArquivo);
 
 // Salvar a lista em um arquivo na hora de retirar

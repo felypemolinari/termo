@@ -1,4 +1,4 @@
-/**
+/*
     ##################################
     #                                #
     #      AUTORES DO PROJETO:       #
@@ -683,7 +683,7 @@ void inserirLista(LUE lista)
     bool verif = false;
     
     while (verif == false) {
-        cout << "Digite a palavra que deseja inserir (lembre-se que tem que ter no minimo/maximo 5 caracteres): " << endl;
+        cout << "Digite a palavra que deseja inserir: (lembre-se que tem que ter no minimo/maximo 5 caracteres) " << endl;
         cin >> respUsuario;
 
         // Transforma para letra maiúscula
@@ -721,7 +721,7 @@ void retirarLista(LUE lista)
     bool verif = false;
     while (verif == false) 
     {
-        cout << "Digite a palavra que deseja retirar (Digite a palavra que deseja inserir (lembre-se que tem que ter no minimo/maximo 5 caracteres): " << endl;
+        cout << "Digite a palavra que deseja retirar: (lembre-se que tem que ter no minimo/maximo 5 caracteres) " << endl;
         cin >> respUsuario;
 
         // Transforma para letra maiúscula
@@ -795,6 +795,33 @@ void inserirERetirarPalavras()
     } while (terminal == true);
 }
 
+void comoJogar()
+{
+    system("cls");
+    int opcao;  
+    bool opcaoValida;
+    bool terminal = true;
+
+    do {
+        do {
+            cout << "O termo consiste em um jogo onde voce tem que achar a palavra correta de 5 letras que foi sorteada, a partir disso voce vai ter uma quantidade de chances para acertar." << endl;
+            cout << "A cor" << "\033[32m" << " verde " << "\033[0m" << "significa que voce acertou a letra e o lugar onde ela esta, a cor" << "\033[33m" << " amarela " << "\033[0m" << "significa que exite essa letra na palavra mas nao e neste local, e se nao aparecer nenhuma dessas cores, significa que a letra nao existe na palavra." << endl;
+            cout << endl;
+            cout << "1) Sair: ";
+            if (!(cin >> opcao) || cin.peek() != '\n' || (opcao != 1)) {
+                verificaCin();
+                opcaoValida = false;
+            } else{
+                opcaoValida = true;
+                system("cls");
+            }
+        } while (!opcaoValida);
+
+        if (opcao == 1) terminal = false;
+             
+    } while (terminal == true);
+}
+
 // Função que roda o jogo
 void run()
 {
@@ -815,10 +842,11 @@ void run()
             cout << endl;
             cout << "1) Jogar: " << endl;
             cout << "2) Incluir/Remover palavras: " << endl;
-            cout << "3) Sair: " << endl << endl;
+            cout << "3) Como jogar: " << endl;
+            cout << "4) Sair: " << endl << endl;
             cout << "Opcao escolhida: ";
 
-            if (!(cin >> opcao) || cin.peek() != '\n' || (opcao != 1 && opcao != 2 && opcao != 3)) {
+            if (!(cin >> opcao) || cin.peek() != '\n' || (opcao != 1 && opcao != 2 && opcao != 3 && opcao != 4)) {
                 verificaCin();
                 opcaoValida = false;
             } else{
@@ -829,7 +857,8 @@ void run()
 
         if (opcao == 1) jogo();
         else if(opcao == 2) inserirERetirarPalavras();
-        else if(opcao == 3) gameLoop = false;
+        else if(opcao == 3) comoJogar();
+        else if(opcao == 4) gameLoop = false;
              
     } while (gameLoop != false);
 }
