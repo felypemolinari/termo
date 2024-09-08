@@ -1,3 +1,14 @@
+/**
+    ##################################
+    #                                #
+    #      AUTORES DO PROJETO:       #
+    #                                #
+    #      FELYPE CESAR MOLINARI     #
+    #     VINICIUS ANDRIANI MAZERA   #
+    #                                #
+    ##################################
+*/
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -672,7 +683,7 @@ void inserirLista(LUE lista)
     bool verif = false;
     
     while (verif == false) {
-        cout << "Digite a palavra que deseja inserir (lembre-se que tem que ter no max 5 caracteres): " << endl;
+        cout << "Digite a palavra que deseja inserir (lembre-se que tem que ter no minimo/maximo 5 caracteres): " << endl;
         cin >> respUsuario;
 
         // Transforma para letra maiúscula
@@ -710,7 +721,7 @@ void retirarLista(LUE lista)
     bool verif = false;
     while (verif == false) 
     {
-        cout << "Digite a palavra que deseja retirar (lembre-se que tem que ter no max 5 caracteres): " << endl;
+        cout << "Digite a palavra que deseja retirar (Digite a palavra que deseja inserir (lembre-se que tem que ter no minimo/maximo 5 caracteres): " << endl;
         cin >> respUsuario;
 
         // Transforma para letra maiúscula
@@ -794,8 +805,6 @@ void run()
     do {
         do {
             cout << "Seja bem-vindo(a) ao: " << endl;
-
-            //cout << "\033[32m" << respUsuario[i] << "\033[0m";  
             cout << "\033[33m" << " _                              " << "\033[0m" << endl;
             cout << "\033[33m" << "| |_    ___   _ __   _ __ ___     ___" << "\033[0m" << endl;
             cout << "\033[33m" << "| __|  / _ \\ | '__| | '_ ` _ \\   / _ \\" << "\033[0m" << endl;
